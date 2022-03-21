@@ -3,14 +3,11 @@
     <xsl:output method="html"/>
         <xsl:template match="/">
         <th>Nombre y Apellidos:Alberto Marquez Mendoza</th>
-        <xsl:for-each select="ies/ciclos/ciclo">
-        <xsl:sort select="nombre"  order="descending"/>
                     <ol>
-                        <li>
-                            "<xsl:for-each select="nombre">
-                            <xsl:value-of select="."/></xsl:for-each>" ( <xsl:value-of select="grado"/> )
-                        </li>
+                        <xsl:for-each select="ies/ciclos/ciclo">
+                        <xsl:sort select="nombre"  order="descending"/>
+                            <li>"<xsl:value-of select="."/>" ( <xsl:value-of select="grado"/> ) </li>
+                       </xsl:for-each>
                     </ol>
-            </xsl:for-each>
         </xsl:template>
 </xsl:stylesheet>
